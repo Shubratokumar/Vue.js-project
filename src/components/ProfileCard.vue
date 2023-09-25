@@ -63,11 +63,18 @@
     <div class="expertise px-5 pb-2">
       <div class="flex items-center justify-between pb-3">
         <p class="expertise--title text-base font-medium">Expert In:</p>
-        <button class="border-none">
-          <img class="p-2" src="../assets/select.png" />
+        <button class="border-none" @click="collapseExpertise">
+          <img
+            class="p-2"
+            :class="showExpertise ? '' : 'rotate-180'"
+            src="../assets/select.png"
+          />
         </button>
       </div>
-      <div class="flex items-center flex-wrap">
+      <div
+        class="flex items-center flex-wrap"
+        :class="showExpertise ? '' : 'hidden'"
+      >
         <span class="expertise--item text-xs font-semibold mr-2 mb-2"
           >Photoshop</span
         >
@@ -85,11 +92,18 @@
     <div class="known-as px-5 pb-5">
       <div class="flex items-center justify-between pb-3">
         <p class="known-as--title text-base font-medium">Known as:</p>
-        <button class="border-none">
-          <img class="p-2" src="../assets/select.png" />
+        <button class="border-none" @click="collapseKnownAs">
+          <img
+            class="p-2"
+            :class="showKnownAs ? '' : 'rotate-180'"
+            src="../assets/select.png"
+          />
         </button>
       </div>
-      <div class="flex items-center flex-wrap">
+      <div
+        class="flex items-center flex-wrap"
+        :class="showKnownAs ? '' : 'hidden'"
+      >
         <span class="known-as--item text-xs font-semibold mr-2 mb-2"
           >The social networker</span
         >
@@ -110,10 +124,20 @@
 <script>
 export default {
   data() {
-    return {};
+    return {
+      showExpertise: true,
+      showKnownAs: true,
+    };
   },
   computed: {},
-  methods: {},
+  methods: {
+    collapseExpertise() {
+      this.showExpertise = this.showExpertise ? false : true;
+    },
+    collapseKnownAs() {
+      this.showKnownAs = this.showKnownAs ? false : true;
+    },
+  },
 };
 </script>
 
@@ -132,7 +156,6 @@ $text-color5: #5585ff;
 $border-primary: 1px solid #f2f2f2;
 .profile-card {
   width: 23.5rem;
-  height: 34.8125rem;
   background: $background1;
   .user {
     &__img {
