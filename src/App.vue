@@ -1,5 +1,6 @@
 <script setup>
-import ProfileCard from "./components/ProfileCard.vue";
+// import ProfileCard from "./components/ProfileCard.vue";
+import VueGraph from "./components/VueGraph.vue";
 </script>
 
 <template>
@@ -12,9 +13,10 @@ import ProfileCard from "./components/ProfileCard.vue";
       height="125"
     />
   </header>
-
+  
   <main>
-    <ProfileCard />
+    <VueGraph />
+    <!-- <ProfileCard /> -->
   </main>
 </template>
 
