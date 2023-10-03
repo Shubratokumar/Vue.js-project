@@ -1,10 +1,11 @@
 <script setup>
-// import ProfileCard from "./components/ProfileCard.vue";
-import VueGraph from "./components/VueGraph.vue";
+import ProfileCard from "./components/ProfileCard.vue";
+// import VueGraph from "./components/VueGraph.vue";
+// import OrgSlider from "./components/OrgSlider.vue";
 </script>
 
 <template>
-  <header>
+  <!-- <header>
     <img
       alt="Vue logo"
       class="logo"
@@ -12,16 +13,22 @@ import VueGraph from "./components/VueGraph.vue";
       width="125"
       height="125"
     />
-  </header>
+  </header> -->
   
-  <main>
-    <VueGraph />
-    <!-- <ProfileCard /> -->
+  <main class="flex items-center justify-center h-screen">
+    <ProfileCard />
+    <!-- <VueGraph /> -->
+    <!-- <OrgSlider/> -->
   </main>
 </template>
 
 <style scoped>
-header {
+main{
+  background-image: url(../src/assets/bg-b2c.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+/* header {
   line-height: 1.5;
 }
 
@@ -46,5 +53,5 @@ header {
     place-items: flex-start;
     flex-wrap: wrap;
   }
-}
+} */
 </style>

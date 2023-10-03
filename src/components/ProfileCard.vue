@@ -65,15 +65,16 @@
         <p class="expertise--title text-base font-medium">Expert In:</p>
         <button class="border-none" @click="collapseExpertise">
           <img
-            class="p-2"
-            :class="showExpertise ? '' : 'rotate-180'"
+            class="transform transition-transform duration-500 p-2"
+            :class="showExpertise ? '' : 'rotate-[-180deg]'"
             src="../assets/select.png"
+            alt="collapse btn"
           />
         </button>
       </div>
       <div
-        class="flex items-center flex-wrap"
-        :class="showExpertise ? '' : 'hidden'"
+        class="items-center flex-wrap"
+        :class="showExpertise ? 'show' : 'hide'"
       >
         <span class="expertise--item text-xs font-semibold mr-2 mb-2"
           >Photoshop</span
@@ -94,15 +95,16 @@
         <p class="known-as--title text-base font-medium">Known as:</p>
         <button class="border-none" @click="collapseKnownAs">
           <img
-            class="p-2"
-            :class="showKnownAs ? '' : 'rotate-180'"
+            class="transform transition-transform duration-500 p-2"
+            :class="showKnownAs ? '' : 'rotate-[-180deg]'"
             src="../assets/select.png"
+            alt="collapse btn"
           />
         </button>
       </div>
       <div
-        class="flex items-center flex-wrap"
-        :class="showKnownAs ? '' : 'hidden'"
+        class="items-center flex-wrap"
+        :class="showKnownAs ? 'show' : 'hide'"
       >
         <span class="known-as--item text-xs font-semibold mr-2 mb-2"
           >The social networker</span
@@ -201,6 +203,12 @@ $border-primary: 1px solid #f2f2f2;
       padding: 0.375rem 0.625rem;
       border-radius: 62.5rem;
     }
+    .show {
+      animation: fadeIn 0.5s ease-in-out forwards;
+    }
+    .hide {
+      animation: fadeOut 0.5s ease-in-out forwards;
+    }
   }
   .expertise {
     &--item {
@@ -213,6 +221,28 @@ $border-primary: 1px solid #f2f2f2;
       background: $background4;
       color: $text-color5;
     }
+  }
+}
+// Show and Hide animation
+@keyframes fadeIn {
+  0% {
+    display: none;
+    opacity: 0;
+  }
+  100% {
+    display: flex;
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    display: flex;
+    opacity: 1;
+  }
+  100% {
+    display: none;
+    opacity: 0;
   }
 }
 </style>
