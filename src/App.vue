@@ -1,7 +1,8 @@
 <script setup>
-import ProfileCard from "./components/ProfileCard.vue";
+// import ProfileCard from "./components/ProfileCard.vue";
 // import VueGraph from "./components/VueGraph.vue";
 // import OrgSlider from "./components/OrgSlider.vue";
+import RedirectNotice from "./components/RedirectNotice.vue";
 </script>
 
 <template>
@@ -15,10 +16,11 @@ import ProfileCard from "./components/ProfileCard.vue";
     />
   </header> -->
   
-  <main class="flex items-center justify-center h-screen">
-    <ProfileCard />
+  <main class="flex items-center justify-center md:h-screen">
+    <!-- <ProfileCard /> -->
     <!-- <VueGraph /> -->
     <!-- <OrgSlider/> -->
+    <RedirectNotice/>
   </main>
 </template>
 

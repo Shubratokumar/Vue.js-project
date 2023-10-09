@@ -1,7 +1,12 @@
 <template>
-  <section class="orgSlider flex items-center rounded-lg p-5">
-    <div class="slider flex items-center justify-center cursor-pointer shadow-lg">
-      <button>
+  <section class="orgSlider flex items-center justify-between rounded-lg p-5">
+    <div 
+      class="slider flex items-center justify-center cursor-pointer shadow-lg transition-transform	duration-300 ease-in-out delay-100 hover:-translate-x-1.5"
+      :class="backward ? '' : 'scale-75'"
+    >
+      <button
+        @click="backwardSlide"        
+      >
         <img
           class="slider--left"
           src="../assets/arrow-left.svg"
@@ -16,8 +21,13 @@
         alt="" 
         />
     </div>
-    <div class="slider flex items-center justify-center cursor-pointer shadow-lg">
-      <button>
+    <div 
+      class="slider flex items-center justify-center cursor-pointer shadow-lg transition-transform	duration-300 ease-in-out delay-100 hover:translate-x-1.5"
+      :class="forward ? '' : 'scale-75'"
+    >
+      <button
+        @click="forwardSlide"
+      >
         <img
           class="slider--right"
           src="../assets/arrow-right.svg"
@@ -28,7 +38,23 @@
   </section>
 </template>
 <script>
-export default {};
+export default {
+  data(){
+    return{
+      forward: false,
+      backward: false,
+    }
+  }
+  ,
+  methods: {
+    forwardSlide(){
+      this.forward = !this.forward;
+    },
+    backwardSlide(){
+      this.backward = !this.backward;
+    }
+  }
+};
 </script>
 <style lang="scss">
 $primary-background: #F9FAFB;
