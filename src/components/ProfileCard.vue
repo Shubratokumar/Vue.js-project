@@ -1,5 +1,5 @@
 <template>
-  <section class="profile-card rounded-lg shadow-xl">
+  <section class="profile__card rounded-lg shadow-xl">
     <div class="user flex items-center p-5">
       <img class="user__img" src="../assets/profile2.png" />
       <div class="user__info text-left ml-4">
@@ -22,7 +22,7 @@
         </div>
       </div>
     </div>
-    <div class="skills-abilities px-5 pb-5">
+    <div class="skills__abilities px-5 pb-5">
       <div class="w-full flex items-center">
         <div
           class="skills rounded-lg p-2 flex justify-between items-start w-1/2 mr-5"
@@ -90,7 +90,7 @@
         >
       </div>
     </div>
-    <div class="known-as px-5 pb-5">
+    <div class="known__as px-5 pb-5">
       <div class="flex items-center justify-between pb-3">
         <p class="known-as--title text-base font-medium">Known as:</p>
         <button class="border-none" @click="collapseKnownAs">
@@ -156,7 +156,7 @@ $text-color3: #91919f;
 $text-color4: #4c8;
 $text-color5: #5585ff;
 $border-primary: 1px solid #f2f2f2;
-.profile-card {
+.profile__card {
   width: 23.5rem;
   background: $background1;
   .user {
@@ -180,7 +180,7 @@ $border-primary: 1px solid #f2f2f2;
       }
     }
   }
-  .skills-abilities {
+  .skills__abilities {
     .skills {
       background: $gradient1;
     }
@@ -195,7 +195,7 @@ $border-primary: 1px solid #f2f2f2;
     }
   }
   .expertise,
-  .known-as {
+  .known__as {
     &--title {
       color: $text-color3;
     }
@@ -216,7 +216,7 @@ $border-primary: 1px solid #f2f2f2;
       color: $text-color4;
     }
   }
-  .known-as {
+  .known__as {
     &--item {
       background: $background4;
       color: $text-color5;
